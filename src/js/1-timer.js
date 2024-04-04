@@ -11,6 +11,6 @@ const options = {
     },
 };
 
-function flatpickr(selector, options) {
+// function flatpickr(selector, options) {
     
-}
+// }
