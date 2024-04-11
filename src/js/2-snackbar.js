@@ -3,9 +3,8 @@ import "izitoast/dist/css/iziToast.min.css";
 
 const form = document.querySelector('form');
 const delayInp = document.querySelector('input[name="delay"]');
-const fulfilled = document.querySelector('input[value="fulfilled"]');
-const rejected = document.querySelector('input[value="rejected"]');
 const submitBtn = document.querySelector('button[type="submit"]');
+const state = form.elements.state.value;
 
 submitBtn.addEventListener('click', handleClick);
 
@@ -15,7 +14,7 @@ function handleClick(event) {
     const delay = parseInt(delayInp.value);
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (rejected.checked) {
+            if (state === 'rejected') {
                 reject(delay);
             } else {
                 resolve(delay);
