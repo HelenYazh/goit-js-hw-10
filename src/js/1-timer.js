@@ -56,7 +56,6 @@ function updateTimer() {
     const timeDifference = selectedDate - now;
     if (timeDifference <= 0) {
         clearInterval(timerInterval);
-        startBtn.disabled = false;
         return;
     }
 
