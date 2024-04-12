@@ -3,13 +3,13 @@ import "izitoast/dist/css/iziToast.min.css";
 
 const form = document.querySelector('form');
 const delayInp = document.querySelector('input[name="delay"]');
-const submitBtn = document.querySelector('button[type="submit"]');
-const state = form.elements.state.value;
 
-submitBtn.addEventListener('click', handleClick);
+form.addEventListener('submit', handleSubmit);
 
-function handleClick(event) {
+function handleSubmit(event) {
     event.preventDefault();
+
+    const state = event.currentTarget.elements.state.value;
 
     const delay = parseInt(delayInp.value);
     const promise = new Promise((resolve, reject) => {
